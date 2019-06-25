@@ -21,4 +21,9 @@ conclusion of day 1: made headway in the first method. Next step is working with
 
 Day 2
 
-shift() method now works. By changing the transform to a transform based on the indexes, as opposed to the values, the method has become 100% stable. 
+shift() method now works. By changing the transform to a transform based on the indexes, as opposed to the values, the method has become 100% stable.
+
+Day 3
+
+A fun enumerator to use is: .cycle()... another looping element.
+.insert :: insert an object before another. array.insert(2, 99) inserts @ index 2 "99"

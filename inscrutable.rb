@@ -1,38 +1,12 @@
-############ WELCOME TO THE GAME: ################
-################ INSCRUTABLE #####################
-
 require 'pry'
 
-# Plan:
-
-## Create methods for each "move" a player or cpu can do...
-## shift // jump // reverse // swap and their various forms... ()
-
-## have the computer apply four of these moves to the ordered sequence in a
-## randoml fashion.
-
-## have the user choose one move at a time, while recording how many moves
-## have been made.
-
-## if the user gets the tiles all back in working order by move 4, then they win.
-## if not, they can concede defeat and try again, concede defeat and quit,
-## or concede defeat and continue until the game is over.
-
-## I want to do some work with YIELD in this round. I also want to graduate
-## from do...end and move into the more ubiquitous and professional realm of {}.
-## I want this code to be written in 100 lines or less.
-
-##########################################################################
-
-# 1. Create the board. Let's make it an array. That will make it easier to
-#   manipulate, since arrays are an ordered collection.
+############ WELCOME TO THE GAME: ################
+################ INSCRUTABLE #####################
 
 current_board = [4, 3, 2, 1, 5, 6, 7, 8, 9]
 # indexes:      [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-# 2. Create the methods.
-
-# Display board works.
+# Display board.
 def display_board(array)
   array.map! do |el|
     el += 1
@@ -50,22 +24,31 @@ def shift(current_board, shift_direction, shift_count)
     print new_array
 end
 
-shift(current_board, 1, 6)
-
-# [1, 2, 3, 4, 5, 6, 7, 8, 9]
-# say I want to swap the 7 and the 3...
+# DONE
+# simply use the .reverse function on the existing array.
+def reverse(current_board)
+  current_board.reverse!
+  print current_board
+end
 
 # integers relating to the index of the swapped pieces
-def single_swap(piece_1, piece_2)
+def single_swap(current_board, piece_1, piece_2)
+  #Algorithm: - save piece_1 index...
+            # - save piece_1 value...
+            # - save piece_2 index...
+            # - save piece_2 value...
+            # - set piece_1 index to piece 2 value...
+            # - set piece_2 index to piece 1 value...
 
 end
 
-# simply use the .reverse function on the existing array.
-def reverse
-end
-
-# not yet sure how this will work.
 def jump(mobile_piece_number, mobile_piece_start_index, number_of_jumps, jump_direction)
+  # Algorithm: - save the piece indexes...
+            #  - save the piece value...
+            #  - create an array of those pieces using .slice!...
+            #  - .insert the array at the piece index -+ jump_number, depending.
+            #  - flatten the array.
+
 end
 
 # 3. Define method flow.
