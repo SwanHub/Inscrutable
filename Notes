@@ -1,0 +1,24 @@
+For the first method, shift, we're going to use a mod function. The mod function
+provides the necessary circularity. It closes the loop of our sequence.
+
+I feel like introducing mod means that each time the board is calculated or
+acted upon, it's actually acting upon a mod equation. No static numbers...
+
+We'll see. The thing is if we take the mod9 of [1..9], we get [0..8], which have
+the same length, but different numeric properties. Interesting.
+
+Bam... so that works well. Some basic mod addition...
+
+I finished the basics of the first method... shift. We use a basic equation
+and an enumerator to accomplish the task. Also, importantly, since our mod
+system relies on converting the cycle from 0..8 to 1..9 each time, we need our
+first, current array to be 0..8 and not 1..9 which it was. That cleaned up a minor bug. And another bug that popped up was I didn't have parentheses around the correct elements of the mod equation. As a result, order of operations
+went to work on the wrong shit. Bugs fixed, the first quarter of the meat of the program's function is working.
+
+Here's the reason why the above does not work: when you calculate directly on the number and the whole puzzle isn't in order, you get wacky ass answers. Because you're these are not VALUE equations we're making... these are index operations. We are MOVING indexes, not manipulating values. It's good, though, because the mod system will actually work quite well on them... I won't have to create a 0..8 array and manipulate the values each time its acted upon. i can work simultaneously with the 0..8 indexes which will represent the numbers on a 1..9 scale.
+
+conclusion of day 1: made headway in the first method. Next step is working with the indexes as opposed ot the value themselves. Applying the principles already discovered.
+
+Day 2
+
+shift() method now works. By changing the transform to a transform based on the indexes, as opposed to the values, the method has become 100% stable. 
