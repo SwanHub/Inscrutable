@@ -27,3 +27,20 @@ Day 3
 
 A fun enumerator to use is: .cycle()... another looping element.
 .insert :: insert an object before another. array.insert(2, 99) inserts @ index 2 "99"
+
+Day 4
+
+Finished the "single_swap" method.
+Hung up on jump method due to interesting thing I just learned: the mod of a
+negative number is not the mod of the abs value of the negative number. It
+appears to be the modular + the negative number. So -2 % 9 = 7... let's see if
+removing the mod helps.
+
+I now have jump() working quite well. All methods, in fact, are operational.
+
+I also am now fully operational on the global variable front. Let's see if I
+can call two methods in a row.
+
+### DEFINING THE GAME FLOW ###
+
+1. Welcome the user "hello, welcome to inscrutable"
