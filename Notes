@@ -17,7 +17,7 @@ went to work on the wrong shit. Bugs fixed, the first quarter of the meat of the
 
 Here's the reason why the above does not work: when you calculate directly on the number and the whole puzzle isn't in order, you get wacky ass answers. Because you're these are not VALUE equations we're making... these are index operations. We are MOVING indexes, not manipulating values. It's good, though, because the mod system will actually work quite well on them... I won't have to create a 0..8 array and manipulate the values each time its acted upon. i can work simultaneously with the 0..8 indexes which will represent the numbers on a 1..9 scale.
 
-conclusion of day 1: made headway in the first method. Next step is working with the indexes as opposed ot the value themselves. Applying the principles already discovered.
+conclusion of day 1: made headway in the first method. Next step is working with the indexes as opposed to the value themselves. Applying the principles already discovered.
 
 Day 2
 
@@ -41,6 +41,5 @@ I now have jump() working quite well. All methods, in fact, are operational.
 I also am now fully operational on the global variable front. Let's see if I
 can call two methods in a row.
 
-### DEFINING THE GAME FLOW ###
-
-1. Welcome the user "hello, welcome to inscrutable"
+What's great is in this new game, we've already incorporated something new ---
+the global variable. I'm happy about that. I can then apply that to my tic-tac-toe and get that game all in shape and more beautiful. A good bit of work tonight, finishing the basic methods jump and single_swap.
