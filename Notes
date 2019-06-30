@@ -61,4 +61,6 @@ I'm getting a double print of the method for some reason...
 
 does it have to do with "require" ? :: Answer: yes. For some reason which I have absolutely no inkling of a reason for... when you remove the "require "./inscrutable.rb", you also remove the second call to print the method. It's as if linking two pages together calls the action twice... need to do some research on "require"
 
-So this works pretty well, interestingly enough. You can store a method itself by stating method(:method_name)... no action takes place. The method is simply ready to pounce when called. good for storing methods inside arrays. 
+So this works pretty well, interestingly enough. You can store a method itself by stating method(:method_name)... no action takes place. The method is simply ready to pounce when called. good for storing methods inside arrays.
+
+Ending with the difficulty of how to STORE a method with tbh input values... how to store a method that takes parameters... 
