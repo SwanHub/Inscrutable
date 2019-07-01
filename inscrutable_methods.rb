@@ -12,13 +12,11 @@ def shift(shift_direction, shift_count)
       new_array.push($current_board[(i - (shift_count*shift_direction))%9])
     end
     $current_board = new_array
-    puts $current_board
 end
 
 # simply use the .reverse function on the existing array.
 def reverse
   $current_board.reverse!
-  puts $current_board
 end
 
 # integers relating to the index of the swapped pieces
@@ -27,8 +25,9 @@ def single_swap(piece_1, piece_2)
   index_2 = $current_board.index(piece_2)
   $current_board[index_1] = piece_2
   $current_board[index_2] = piece_1
-  puts $current_board
 end
+
+## TAKE A CLOSER LOOK AT THIS METHO
 
 # Number or adjacent numbers jump L or R by X places.
 def jump(starting_piece, num_pieces_moved, number_of_jumps, jump_direction)
@@ -41,5 +40,4 @@ def jump(starting_piece, num_pieces_moved, number_of_jumps, jump_direction)
     end
   $current_board.insert(new_index, slice_of_array)
   $current_board.flatten!
-  puts $current_board
 end

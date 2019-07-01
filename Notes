@@ -63,4 +63,21 @@ does it have to do with "require" ? :: Answer: yes. For some reason which I have
 
 So this works pretty well, interestingly enough. You can store a method itself by stating method(:method_name)... no action takes place. The method is simply ready to pounce when called. good for storing methods inside arrays.
 
-Ending with the difficulty of how to STORE a method with tbh input values... how to store a method that takes parameters... 
+Ending with the difficulty of how to STORE a method with tbh input values... how to store a method that takes parameters...
+
+Day 6
+
+Some good news after testing:
+You can set a var equal to a sample from an array and if you loop through that sequence multiple times, the variable value is not saved. I.e. you can use this sampling as the basis for the loop mechanism...
+
+ALSO, I figured out the mechanism for this .call action... instead of trying to pass through the arguments to the array, pass through the arguments when you are using the .call function... like this: array[0].call(argument1, argument2)
+
+GENIUS!
+
+Well, so now I have two methods to get the same thing done. very nice... let me see if I can put a random sampling in there... YES! That works as well.
+
+full breakthrough today with the method saving and calling...
+
+In this project, we've already added an understanding of this new procedure for calling methods, whereby you use method(:method_name) and then call the method with array_of_methods[index].call(argument1, argument2). We are also using the .sample method for getting a random selection from an array. Excellent.
+
+Testing bugs: 4 is the culprit. Incorrectly creates several "nil" values within the $current_board array.
