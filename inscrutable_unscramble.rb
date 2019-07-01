@@ -1,16 +1,16 @@
 ### WHERE WE DEFINE THE UNSCRAMBLING METHOD OF THE COMPUTER ###
 
-## Will include a loop with user input...
 
-def functionz(x, l)
-  y = x + l + 1
-  puts y
-end
-
-## THIS ALSO WORKS!!!!!
-
-joy = [1, 2, 3].sample
-jams = [-1, 1].sample
-
-array = [method(:functionz)]
-array[0].call(joy, jams)
+#--after the scrambling has occurred
+#-LOOP
+#---ask user which transform method they want to use
+#----if 1, ask for direction and amount
+#-----if 2, no arguments needed
+#------if 3, ask for two pieces
+#-------if 4, ask for direction, count, start_piece and pieces_moved.
+#-Loop through this process 4 times...
+#--------at the end of each loop, delete any "nil" if they've appeared.
+#---------then check to see if their sequence resulted in a successful sequence.
+#----------if it has, then let them know they won, and keep track of their w/l
+#-----------if not, then give them option to try again from scratch or on the
+#------------same scramble once more.

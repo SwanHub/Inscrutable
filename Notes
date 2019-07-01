@@ -81,3 +81,9 @@ full breakthrough today with the method saving and calling...
 In this project, we've already added an understanding of this new procedure for calling methods, whereby you use method(:method_name) and then call the method with array_of_methods[index].call(argument1, argument2). We are also using the .sample method for getting a random selection from an array. Excellent.
 
 Testing bugs: 4 is the culprit. Incorrectly creates several "nil" values within the $current_board array.
+
+I feel like the issue has primarily to do with jumping to the right when there is nothing to the right. I need to change the parameters of a jump from being definite within a range to being derived within a range. I do have a good plan b for this anyway, which is to simply remove any nils which appear.
+
+The next challenge will be to create an "unscramble" method. Scramble has been created, along with the methods for transforming the array sequence.
+
+I also want to encapsulate all of the welcome messages in methods so that my run script can be as absolutely clean as possible. 
