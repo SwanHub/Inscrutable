@@ -3,6 +3,9 @@
 $current_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 $win_loss = {wins: 0, losses: 0}
 $play = true
+$start = 0
+$finish = 0
+$points = 0
 
 # shift_direction :: -1 or +1, rep R or L. shift_count defines # of places moved.
 def shift(shift_direction, shift_count)

@@ -12,7 +12,7 @@ def unscramble
           puts ""
           puts "                   which transformation would you like to use?"
           display_options()
-          
+
           loop do
             puts "#######"
             user_response = gets.chomp
@@ -76,10 +76,15 @@ def unscramble
 
           if $current_board == [1, 2, 3, 4, 5, 6, 7, 8, 9]
             $win_loss[:wins] += 1
+            $finish = Time.now
+            $points = $finish - $start
+            puts "You took this long: #{$points}"
             display_final_message("WIN")
           else
             $win_loss[:losses] += 1
+            $finish = Time.now
+            $points = $finish - $start
+            puts "You took this long: #{$points} seconds."
             display_final_message("LOSE")
           end
-
 end

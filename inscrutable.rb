@@ -1,5 +1,3 @@
-### THE PROGRAM ###
-
 ### OTHER FILES ###
 require './inscrutable_transform_methods.rb'
 require './inscrutable_scramble.rb'
@@ -26,6 +24,7 @@ while $play == true
       puts "#######"
         if user_response == "game on"
           scramble
+          $start = Time.now
           break
         elsif user_response == "bye"
           exit
@@ -39,7 +38,11 @@ while $play == true
 
     unscramble()
 
-### AGAIN? ###
+### RESET/AGAIN? ###
+
+$start = 0
+$finish = 0
+$points = 0
 
     puts "Do you want to play again? ('y' or 'n')"
     puts "#######"
