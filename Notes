@@ -86,4 +86,26 @@ I feel like the issue has primarily to do with jumping to the right when there i
 
 The next challenge will be to create an "unscramble" method. Scramble has been created, along with the methods for transforming the array sequence.
 
-I also want to encapsulate all of the welcome messages in methods so that my run script can be as absolutely clean as possible. 
+I also want to encapsulate all of the welcome messages in methods so that my run script can be as absolutely clean as possible.
+
+Day 7
+
+Big day. Unscramble is finished. I tied all of the elements together. It works.
+Jump method definitely has more power than the other methods. Of the 4 games I've played, three of which I used jump the entire time and one of which I didn't use it at all.
+
+Things I need to improve on next:
+-- keep track of how many loop-throughs we've done for unscramble method. That way we can keep display_winning_message from coming up twice, once at the fourth loop and once ///-- well, I think I may just need to remove displays from the inside of the loop altogether... just test for correct sequence and then break the sequence if correct.DONE
+-- loop the entire scramble // unscramble sequence.DONE
+-- Now I need to display how many moves the user has left.DONE
+-- Bug: if type in a number/letter which is not one of the options, then there is no safety mechanism.DONE
+
+As of right now, it's a pretty simple game. Very simple, actually.
+
+Note: I could have also used .rotate! as a mechanism to shift the board. That would be more efficient and does the exact same transformation.
+
+THOUGHTS ON BETA 2.0
+
+-- Could it also be interesting to show the failed board with associated incorrect positions... Maybe an asterisk under all of the incorrect indexes. Could be a pretty simple iteration.
+-- let's keep track of time and relate time to points.
+-- how to create LVLs of difficulty? (Would need to calculate the difficulty of a generated board?)
+  -- people move up in the difficulty as they beat a level. You simultaneously accumulate points.

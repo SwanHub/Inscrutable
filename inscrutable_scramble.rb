@@ -1,10 +1,4 @@
-### WHERE WE DEFINE THE SCRAMBLING METHOD OF THE COMPUTER ###
-
-require './inscrutable_methods.rb'
-#require './inscrutable.rb'
-require 'pry'
-
-# All of the variables:
+### COMPUTER SCRAMBLING METHOD ###
 
 def scramble
 
@@ -30,7 +24,7 @@ def scramble
           piece2 = rand(1..9)
           array_of_methods[2].call(piece1, piece2)
 
-          #right now only using preventative delete_if "nil" method.
+          #right now only using preventative for "nil" pop-ups. Not @ root cause.
 
         elsif method_choice == 4
           #jump, 4 arguments
@@ -42,14 +36,4 @@ def scramble
         end
         $current_board.delete_if {|el| el == nil }
     end
-  print $current_board
 end
-
-scramble
-
-#=> [9, 2, 3, 8, 1, 7, 6, 5, 4]
-#=> [1, 2, 5, 3, 7, 6, 8, 9, 4]
-#=> [7, 2, 3, 4, 9, 5, 8, 6, 1]
-
-#ruby inscrutable_scramble.rb
-########################

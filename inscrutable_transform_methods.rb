@@ -1,17 +1,8 @@
-$current_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-# Display board.
-def display_board
-  puts ""
-  puts "          HERE IS THE BOARD: "
-  puts ""
-  puts "    ######################################################"
-  puts "    Values: ### #{$current_board[0]}   #{$current_board[1]}   #{$current_board[2]}   #{$current_board[3]}   #{$current_board[4]}   #{$current_board[5]}   #{$current_board[6]}   #{$current_board[7]}   #{$current_board[8]} ########"
-  puts "    ######################################################"
-  puts "                |   |   |   |   |   |   |   |   |"
-  puts "    Positions:  1   2   3   4   5   6   7   8   9"
-  puts ""
-end
+# Global Variables.
+$current_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+$win_loss = {wins: 0, losses: 0}
+$play = true
 
 # shift_direction :: -1 or +1, rep R or L. shift_count defines # of places moved.
 def shift(shift_direction, shift_count)
@@ -36,7 +27,7 @@ def single_swap(piece_1, piece_2)
 end
 
 # Number or adjacent numbers jump L or R by X places.
-def jump(starting_piece, num_pieces_moved, number_of_jumps, jump_direction)
+def jump(starting_piece, num_pieces_moved, jump_direction, number_of_jumps)
   starting_index = $current_board.index(starting_piece)
   slice_of_array = $current_board.slice!(starting_index, num_pieces_moved)
   new_index = starting_index + (number_of_jumps*jump_direction)
