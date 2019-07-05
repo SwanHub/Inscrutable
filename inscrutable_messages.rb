@@ -2,7 +2,6 @@
 
 # Welcome msg.
 def welcome
-
   puts ""
   puts ""
   puts "                                 Welcome to the Game:"
@@ -44,15 +43,16 @@ def display_final_message(msg)
         failing_values[i] = "*"
       end
     }
-  puts ""
-  puts "                                     ##########"
-  puts "                                      YOU #{msg}!"
-  puts "                                     ##########"
-  puts ""
-  display_board
-  puts "                            #{failing_values[0]}   #{failing_values[1]}   #{failing_values[2]}   #{failing_values[3]}   #{failing_values[4]}   #{failing_values[5]}   #{failing_values[6]}   #{failing_values[7]}   #{failing_values[8]} "
-  puts " "
-  puts "                           Wins: #{$win_loss[:wins]}"
-  puts "                           Losses: #{$win_loss[:losses]}"
-  puts ""
+    puts ""
+    puts "                                     ##########"
+    puts "                                      YOU #{msg}!"
+    puts "                                     ##########"
+    puts ""
+    display_board
+    puts "                            #{failing_values[0]}   #{failing_values[1]}   #{failing_values[2]}   #{failing_values[3]}   #{failing_values[4]}   #{failing_values[5]}   #{failing_values[6]}   #{failing_values[7]}   #{failing_values[8]} "
+    puts " "
+    puts "                           Wins: #{$win_loss[:wins]}"
+    puts "                           Losses: #{$win_loss[:losses]}"
+    puts ""
+    
 end
