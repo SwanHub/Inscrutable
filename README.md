@@ -13,6 +13,6 @@ If you don't rearrange the board by the 4th move:
   
 If you successfully rearrange the board by the 4th move:
   - You win. 
-  - (Your points will be calculated and saved.)
+  - (Your points will be calculated and saved to a leaderboard.)
   
 The game keeps track of your wins/losses.
