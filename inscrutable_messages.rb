@@ -28,10 +28,10 @@ end
 # Display transformation options.
 def display_options
   puts ""
-  puts "                1. Jump up to three pieces in either direction."
+  puts "                1. Move a group of one, two or three in either direction."
   puts "                2. Shift the board in either direction."
-  puts "                3. Reverse the sequence."
-  puts "                4. Swap two pieces."
+  puts "                3. Swap two individual pieces."
+  puts "                4. Reverse the sequence."
   puts ""
 end
 
@@ -40,7 +40,7 @@ def display_final_message(msg)
   failing_values = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     $current_board.each_with_index { |el, i|
       if el != i + 1
-        failing_values[i] = "*"
+        failing_values[i] = "X"
       end
     }
     puts ""
@@ -54,5 +54,5 @@ def display_final_message(msg)
     puts "                           Wins: #{$win_loss[:wins]}"
     puts "                           Losses: #{$win_loss[:losses]}"
     puts ""
-    
+
 end

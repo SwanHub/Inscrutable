@@ -110,5 +110,14 @@ THOUGHTS ON BETA 2.0
 -- let's keep track of time and relate time to points.
     -- I now know how to keep track of time. Integrating time with points will require work with the below challenge.
 -- how to create LVLs of difficulty? (Would need to calculate the difficulty of a generated board?)
-You could have the computer go through all possible options and store in an array all of those options which result in a correct board at the end. This would be the definition of a "dumb" system. Where you're basically just operating against a known catalogue. That's a TON of calculations, though. Let's see if the computer can handle all that instantaneously in the same way it's been instantaneously handling everything else. My guess is it will be slightly slower. 
+You could have the computer go through all possible options and store in an array all of those options which result in a correct board at the end. This would be the definition of a "dumb" system. Where you're basically just operating against a known catalogue. That's a TON of calculations, though. Let's see if the computer can handle all that instantaneously in the same way it's been instantaneously handling everything else. My guess is it will be slightly slower.
   -- people move up in the difficulty as they beat a level. You simultaneously accumulate points.
+
+I've not beta tested this game for several people in my family. Overall, positive marks. The pitfalls in the current game are:
+ + it's too easy.
+ + there should be levels of difficulty.
+ + include time / points.
+ + "jump" requires too much input. Jump and shift method could be compressed. One less input required.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+If I were to continue with this game, I would devise a method of separating easy and hard games. Billy's one game was the only genuine stumper I've experienced yet. All others have been more than manageable. Since there is no data storage system, I can't log high scores. 

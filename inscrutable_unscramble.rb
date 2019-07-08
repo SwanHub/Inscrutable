@@ -20,11 +20,11 @@ def unscramble
 
             #jump
             if user_response == "1"
-              puts "                  Choose the left-most piece you want to jump"
+              puts "                  Choose the left-most piece you want to move"
               start_piece = gets.chomp.to_i
               puts "                  Choose up to three total pieces to move"
               pieces_moved = gets.chomp.to_i
-              puts "                  Choose the direction of your jump ('-1' for Left // '1' for Right)"
+              puts "                  Choose the direction of your jump ('-1' for Left / '1' for Right)"
               direction = gets.chomp.to_i
               puts "                  Choose how many spaces you want to jump."
               jump_spaces = gets.chomp.to_i
@@ -43,22 +43,22 @@ def unscramble
               sleep(1)
               break
 
-              #reverse
+              #swap
             elsif user_response == "3"
 
-              sleep(1)
-              reverse()
-              break
-
-              #swap
-            elsif user_response == "4"
-
-              puts "                   Choose a first piece to swap with."
+              puts "                   Choose the first piece to swap."
               piece_1 = gets.chomp.to_i
-              puts "                   Choose a second piece to swap with."
+              puts "                   Choose the second piece to swap."
               piece_2 = gets.chomp.to_i
               sleep(1)
               single_swap(piece_1, piece_2)
+              break
+
+              #reverse
+            elsif user_response == "4"
+
+              sleep(1)
+              reverse()
               break
 
             else
@@ -78,7 +78,7 @@ def unscramble
             $win_loss[:wins] += 1
             $finish = Time.now
             $points = $finish - $start
-            puts "You took this long: #{$points}"
+            puts "You took this long: #{$points} seconds."
             display_final_message("WIN")
           else
             $win_loss[:losses] += 1
