@@ -1,4 +1,5 @@
 ### DISPLAY TEXT MESSAGES ###
+require 'tty-prompt'
 
 # Welcome msg.
 def welcome
@@ -37,6 +38,7 @@ end
 
 # Display win/loss message.
 def display_final_message(msg)
+  prompt = TTY::Prompt.new(symbols: {marker: '>'})
   failing_values = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     $current_board.each_with_index { |el, i|
       if el != i + 1
@@ -44,9 +46,15 @@ def display_final_message(msg)
       end
     }
     puts ""
-    puts "                                     ##########"
-    puts "                                      YOU #{msg}!"
-    puts "                                     ##########"
+    if msg == "LOSE"
+      puts "                                        XXXXXXX"
+      prompt.error("                                       YOU #{msg}!")
+      puts "                                        XXXXXXX"
+    elsif msg == "WIN"
+      puts "                                        XXXXXXX"
+      prompt.ok("                                       YOU #{msg}!")
+      puts "                                        XXXXXXX"
+    end
     puts ""
     display_board
     puts "                            #{failing_values[0]}   #{failing_values[1]}   #{failing_values[2]}   #{failing_values[3]}   #{failing_values[4]}   #{failing_values[5]}   #{failing_values[6]}   #{failing_values[7]}   #{failing_values[8]} "

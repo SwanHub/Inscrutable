@@ -1,123 +1,107 @@
-For the first method, shift, we're going to use a mod function. The mod function
-provides the necessary circularity. It closes the loop of our sequence.
+Day 1
 
-I feel like introducing mod means that each time the board is calculated or
-acted upon, it's actually acting upon a mod equation. No static numbers...
-
-We'll see. The thing is if we take the mod9 of [1..9], we get [0..8], which have
-the same length, but different numeric properties. Interesting.
-
-Bam... so that works well. Some basic mod addition...
-
-I finished the basics of the first method... shift. We use a basic equation
-and an enumerator to accomplish the task. Also, importantly, since our mod
-system relies on converting the cycle from 0..8 to 1..9 each time, we need our
-first, current array to be 0..8 and not 1..9 which it was. That cleaned up a minor bug. And another bug that popped up was I didn't have parentheses around the correct elements of the mod equation. As a result, order of operations
-went to work on the wrong shit. Bugs fixed, the first quarter of the meat of the program's function is working.
-
-Here's the reason why the above does not work: when you calculate directly on the number and the whole puzzle isn't in order, you get wacky ass answers. Because you're these are not VALUE equations we're making... these are index operations. We are MOVING indexes, not manipulating values. It's good, though, because the mod system will actually work quite well on them... I won't have to create a 0..8 array and manipulate the values each time its acted upon. i can work simultaneously with the 0..8 indexes which will represent the numbers on a 1..9 scale.
-
-conclusion of day 1: made headway in the first method. Next step is working with the indexes as opposed to the value themselves. Applying the principles already discovered.
+Planning
 
 Day 2
 
-shift() method now works. By changing the transform to a transform based on the indexes, as opposed to the values, the method has become 100% stable.
+shift() method now works.
+  (I could have used .rotate method.)
 
 Day 3
 
-A fun enumerator to use is: .cycle()... another looping element.
 .insert :: insert an object before another. array.insert(2, 99) inserts @ index 2 "99"
 
 Day 4
 
 Finished the "single_swap" method.
-Hung up on jump method due to interesting thing I just learned: the mod of a
-negative number is not the mod of the abs value of the negative number. It
-appears to be the modular + the negative number. So -2 % 9 = 7... let's see if
-removing the mod helps.
 
-I now have jump() working quite well. All methods, in fact, are operational.
+Hung up on jump method due to mods of negative numbers.
 
-I also am now fully operational on the global variable front. Let's see if I
-can call two methods in a row.
+### Need to research mods of negative numbers...
+  -17%12 = 7
+  -17%16 = 15
+###
 
-What's great is in this new game, we've already incorporated something new ---
-the global variable. I'm happy about that. I can then apply that to my tic-tac-toe and get that game all in shape and more beautiful. A good bit of work tonight, finishing the basic methods jump and single_swap.
+I now have jump() working quite well. All methods are operational.
+
+Global variables also working. First time I've used those. Will go back and
+change tic-tac-toe to include global variables.
 
 Day 5
 
-Here's a good problem we're running into. You can't store a method inside an array without the method being called.
+The goal is to randomly call a method from the array.
 
+Good obstacle: can't store a method inside an array without the method being called.
+
+Stack Overflow:
 "What you're storing in the array is the result of the methods, not the methods themselves."
 
-Check this further funky business out... if you define a method that defines an array full of methods, then I am for some reason calling the methods within the array twice... even though I only ever actually call the function once... then when I remove the function_choice from being called, I get nothing (which makes sense because nothing was called). Mystery to solve.
+Check this further funky business out... if you define a method that defines an array full of methods, then I am for some reason calling the methods within the array twice... even though I only ever actually call the function once...
 
-At the thought of using method(:jump) and jump.call... I would entertain an alternative solution to storing methods...
-
-The goal is to randomly call a method.
+Stack Overflow yielding answer: use method(:jump) and jump.call...
 
 I've goofed somewhere. Even when I remove everything and just call a shift(-1, 2)
 I'm getting a double print of the method for some reason...
 
-does it have to do with "require" ? :: Answer: yes. For some reason which I have absolutely no inkling of a reason for... when you remove the "require "./inscrutable.rb", you also remove the second call to print the method. It's as if linking two pages together calls the action twice... need to do some research on "require"
-
-So this works pretty well, interestingly enough. You can store a method itself by stating method(:method_name)... no action takes place. The method is simply ready to pounce when called. good for storing methods inside arrays.
+does it have to do with "require" ?
+  Answer: yes. When you remove the "require './inscrutable.rb'", you also remove the second call to print the method. It's as if linking two pages together calls the action twice... need to do some research on "require".
 
 Ending with the difficulty of how to STORE a method with tbh input values... how to store a method that takes parameters...
 
 Day 6
 
-Some good news after testing:
-You can set a var equal to a sample from an array and if you loop through that sequence multiple times, the variable value is not saved. I.e. you can use this sampling as the basis for the loop mechanism...
+Goal: call a stored method.
 
-ALSO, I figured out the mechanism for this .call action... instead of trying to pass through the arguments to the array, pass through the arguments when you are using the .call function... like this: array[0].call(argument1, argument2)
+Answer: pass arguments at the moment you use the .call function... like this: array[0].call(argument1, argument2)
 
-GENIUS!
-
-Well, so now I have two methods to get the same thing done. very nice... let me see if I can put a random sampling in there... YES! That works as well.
-
-full breakthrough today with the method saving and calling...
-
-In this project, we've already added an understanding of this new procedure for calling methods, whereby you use method(:method_name) and then call the method with array_of_methods[index].call(argument1, argument2). We are also using the .sample method for getting a random selection from an array. Excellent.
+In this project, we've already added an understanding of this new procedure for calling methods, whereby you use method(:method_name) and then call the method with array_of_methods[index].call(argument1, argument2). We are also using the .sample method for getting a random selection from an array.
 
 Testing bugs: 4 is the culprit. Incorrectly creates several "nil" values within the $current_board array.
 
-I feel like the issue has primarily to do with jumping to the right when there is nothing to the right. I need to change the parameters of a jump from being definite within a range to being derived within a range. I do have a good plan b for this anyway, which is to simply remove any nils which appear.
-
-The next challenge will be to create an "unscramble" method. Scramble has been created, along with the methods for transforming the array sequence.
-
-I also want to encapsulate all of the welcome messages in methods so that my run script can be as absolutely clean as possible.
+Random scramble method is complete.
 
 Day 7
 
-Big day. Unscramble is finished. I tied all of the elements together. It works.
-Jump method definitely has more power than the other methods. Of the 4 games I've played, three of which I used jump the entire time and one of which I didn't use it at all.
+Created an unscramble method.
 
-Things I need to improve on next:
--- keep track of how many loop-throughs we've done for unscramble method. That way we can keep display_winning_message from coming up twice, once at the fourth loop and once ///-- well, I think I may just need to remove displays from the inside of the loop altogether... just test for correct sequence and then break the sequence if correct.DONE
--- loop the entire scramble // unscramble sequence.DONE
--- Now I need to display how many moves the user has left.DONE
--- Bug: if type in a number/letter which is not one of the options, then there is no safety mechanism.DONE
--- Could it also be interesting to show the failed board with associated incorrect positions... Maybe an asterisk under all of the incorrect indexes. Could be a pretty simple iteration. DONE
+Jump() method has more power than other methods.
 
+Finishing touches:
+-- Remove display messages from the inside of the unscramble loop... just test
+   for correct sequence and then break the sequence if user is correct.
+-- Loop the entire scramble // unscramble sequence.
+-- Display how many moves the user has left.
+-- Create safety mechanism for mistaken number entry. (could be best solved with
+   an options menu gem for each move.)
+-- For losing games, show the board with associated incorrect positions... an
+   'X' under all incorrect indexes.
 
-As of right now, it's a pretty simple game. Very simple, actually.
+1.0 FINISHED ___________________________ NOW FOR USER TESTING
 
-Note: I could have also used .rotate! as a mechanism to shift the board. That would be more efficient and does the exact same transformation.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+IMPROVEMENTS FOR 2.0, BASED ON USER RESPONSE
 
-THOUGHTS ON BETA 2.0
+-- Keep track of time.
 
--- let's keep track of time and relate time to points.
-    -- I now know how to keep track of time. Integrating time with points will require work with the below challenge.
--- how to create LVLs of difficulty? (Would need to calculate the difficulty of a generated board?)
-You could have the computer go through all possible options and store in an array all of those options which result in a correct board at the end. This would be the definition of a "dumb" system. Where you're basically just operating against a known catalogue. That's a TON of calculations, though. Let's see if the computer can handle all that instantaneously in the same way it's been instantaneously handling everything else. My guess is it will be slightly slower.
-  -- people move up in the difficulty as they beat a level. You simultaneously accumulate points.
+  (Would need to calculate the difficulty of a generated board)
 
-I've not beta tested this game for several people in my family. Overall, positive marks. The pitfalls in the current game are:
- + it's too easy.
- + there should be levels of difficulty.
- + include time / points.
- + "jump" requires too much input. Jump and shift method could be compressed. One less input required.
+  1. Loop through all possible possible winning combinations of transformations.
+     Store each winning sequence in an array. Count number of sequences.
+  2. Determine a way to calculate the difficulty of the board on the spot,
+     based on adjacency.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-If I were to continue with this game, I would devise a method of separating easy and hard games. Billy's one game was the only genuine stumper I've experienced yet. All others have been more than manageable. Since there is no data storage system, I can't log high scores. 
+-- You accumulate points.
+     + log points via multiplier (based on time) * # of moves (where applicable)
+-- High scores on individual levels are saved (cli gem)
+-- Jump and shift methods can be compressed. (-5 vs. -1*5)
+-- Options menu (cli gem)
+
+Realistically, before moving on to the next project, here are the things I want
+to change:
+  - In scramble(), should deny "same state" transformations. DONE
+      (ensures the board is at least 4-move difficult)
+  - fix jump method over array.length threshold. DONE
+  - compress jump and shift methods. DONE
+  - options menu gem DONE
+  - saving high scores (times) gem
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

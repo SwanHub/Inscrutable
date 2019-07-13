@@ -7,11 +7,11 @@ $start = 0
 $finish = 0
 $points = 0
 
-# shift_direction :: -1 or +1, rep R or L. shift_count defines # of places moved.
-def shift(shift_direction, shift_count)
+# shift_direction
+def shift(shift)
   new_array = []
   $current_board.each_with_index do |el, i|
-      new_array.push($current_board[(i - (shift_count*shift_direction))%9])
+      new_array.push($current_board[(i - (shift))%9])
     end
     $current_board = new_array
 end
@@ -30,10 +30,16 @@ def single_swap(piece_1, piece_2)
 end
 
 # Number or adjacent numbers jump L or R by X places.
-def jump(starting_piece, num_pieces_moved, jump_direction, number_of_jumps)
+def jump(starting_piece, num_pieces_moved, jump_movement)
   starting_index = $current_board.index(starting_piece)
   slice_of_array = $current_board.slice!(starting_index, num_pieces_moved)
-  new_index = starting_index + (number_of_jumps*jump_direction)
+  # need if/then statement. 2 cases. 1. crossing length threshold. 2. landing on.
+  if jump_movement > 0 && (starting_index + (jump_movement))%(9-num_pieces_moved) == 0
+    new_index = (starting_index + (jump_movement))
+  else
+    new_index = (starting_index + (jump_movement))%(9-num_pieces_moved)
+  end
+
     # correcting for negative index notation.
     if new_index < 0
       new_index -= 1
