@@ -1,4 +1,6 @@
-## Inscrutable is a game of deductive logic
+## Inscrutable
+
+## Still under development
 
 - player is initially given a sequence of numbers 1 - 9 
 
