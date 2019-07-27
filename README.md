@@ -1,13 +1,30 @@
-# Inscrutable is a game of deductive logic
+## Inscrutable is a game of deductive logic
 
-Player goal:
-  - Rearrange tiles back into 1-9 order within 4 moves.
+- player is initially given a sequence of numbers 1 - 9 
 
-How to play:
-  1. "Shuffle" the board.
-  2. Choose a move from eight options (shift, jump, reverse, etc.)
-  3. Repeat step 2 three times.
+- cpu scrambles the board using a random selection of the four transformations available to the user.
+    (this ensures that the user can win.)
+    
+- The player then has 4 moves to rearrange the pieces correctly.
 
-If you don't rearrange the board by the 4th move:
-  - You lose, but you can keep going until you are victorious. Your # of moves
-    will be recorded. 
+- using activerecord, player stats recorded: 
+    * wins
+    * losses
+    * win_percentage
+    * number of games played
+    * last time played 
+    * last time played result
+    * quickest victory
+
+- using activerecord, general leaderboards across users recorded:
+    * Fastest victory
+    * Most games played 
+    * Most wins 
+    * Most losses
+    * Best win percentage
+    * Total games played across all users
+    * Total wins
+    * Total losses
+
+A more in depth explanation of the game available here:
+  - [insert Medium article]
