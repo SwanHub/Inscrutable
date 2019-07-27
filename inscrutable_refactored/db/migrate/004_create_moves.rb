@@ -9,6 +9,15 @@ class CreateMoves < ActiveRecord::Migration[5.2]
       t.integer :jump_first_piece
       t.integer :jump_number_of_pieces
       t.integer :jump_places
+      t.integer :start_board_0
+      t.integer :start_board_1
+      t.integer :start_board_2
+      t.integer :start_board_3
+      t.integer :start_board_4
+      t.integer :start_board_5
+      t.integer :start_board_6
+      t.integer :start_board_7
+      t.integer :start_board_8
       t.timestamps
     end
   end
