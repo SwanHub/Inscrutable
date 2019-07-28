@@ -1,10 +1,6 @@
 
 ![Inscrutable_logo](https://user-images.githubusercontent.com/47403119/62002209-8ef0d980-b0bc-11e9-877c-b9ac85c20024.png)
 
-## Description
-
-Inscrutable is the first of many games which will exist under the "Flatiron Games" moniker. These are games made by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
-
 ## Installation 
 
 - gem `tty-prompt`
@@ -12,15 +8,15 @@ Inscrutable is the first of many games which will exist under the "Flatiron Game
 
 ## Rules / Game Flow
 
-- player is initially given a sequence of numbers 1 - 9 
+- Player is initially given a sequence of numbers 1 - 9 
 
-- cpu scrambles the board using four randomized transformations.
+- CPU scrambles the board using four randomized transformations.
     
-- The player then has 4 moves to rearrange the pieces correctly.
+- Player then has 4 moves to rearrange the pieces correctly.
 
 ## ActiveRecord
 
-- using activerecord, player stats recorded: 
+- Using activerecord, player stats recorded: 
     * wins
     * losses
     * win_percentage
@@ -29,7 +25,7 @@ Inscrutable is the first of many games which will exist under the "Flatiron Game
     * last time played result
     * quickest victory
 
-- using activerecord, general leaderboards across users recorded:
+- Using activerecord, general leaderboards across users recorded:
     * Fastest victory
     * Most games played 
     * Most wins 
