@@ -9,5 +9,6 @@ class AddColumnsToGames < ActiveRecord::Migration[5.2]
     add_column :games, :board_6, :integer, default: 7
     add_column :games, :board_7, :integer, default: 8
     add_column :games, :board_8, :integer, default: 9
+    add_column :games, :remaining_moves, :integer, default: 4
   end
 end

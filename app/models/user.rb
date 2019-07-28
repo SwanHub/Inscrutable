@@ -26,11 +26,6 @@ class User < ActiveRecord::Base
       puts ""
   end
 
-  # name input gathered by gets.chomp.
-  def self.user_new?(input)
-      find_or_create_by(name: input)
-  end
-
   # creates new match associated with this user.
   def new_match
       new_match = Match.create
@@ -69,7 +64,13 @@ class User < ActiveRecord::Base
             elsif user_response == "stats"
                   personal_stats
             elsif user_response == "leaderboard"
-                  self.class.general_leaderboard
+                  if Match.all.count == 0
+                    puts ""
+                    puts "                               no games played yet. get cracking."
+                    puts Paint['                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+                  else
+                     self.class.general_leaderboard
+                  end
             elsif user_response == "motto"
                   puts ""
                   puts "                                      S E T   M O T T O"

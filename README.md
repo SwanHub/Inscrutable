@@ -2,13 +2,16 @@
 
 ## Installation
 
-- fork and clone this repository.
+- Fork and clone this repository.
 
-- `$ bundle install`
+- Install gem dependencies `$ bundle install`
 
-- create database, load tables: `$ rake db:migrate`
+- Create database, load tables: `$ rake db:migrate`
 
-- run game: `$ ruby config/environment.rb`
+- Run game:
+    1. open 'config/environment'
+    2. uncomment `play_game`
+    3. While in `Inscrutable/` directory, enter `$ ruby config/environment.rb`
 
 ## Rules / Game Flow
 

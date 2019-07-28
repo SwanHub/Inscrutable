@@ -1,13 +1,14 @@
 source "https://rubygems.org"
 
-gem "rspec"
-gem "sinatra-activerecord"
-gem "sqlite3", '~>1.3.6'
-gem "rake"
-gem "database_cleaner"
-gem "pry"
-gem "require_all"
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# design gems, prompts and colors.
+# gem "rails"
+
+gem "activerecord", "~> 5.2"
+gem "sqlite3", "~> 1.4"
+gem "sinatra", "~> 2.0"
+gem "sinatra-activerecord", "~> 2.0"
+gem "require_all", "~> 2.0"
+
 gem "tty-prompt"
 gem "paint"
