@@ -1,6 +1,16 @@
-## Inscrutable
 
-*Inscrutable is the first of many games to come from the umbrella .co of "Flatiron Games", games made by students, instructors, alumni at Flatiron School. 
+
+
+## Description
+
+The intention of Inscrutable is to usher in a host of games created by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
+
+## Installation 
+
+- gem `tty-prompt`
+- gem `paint`
+
+## Rules / Game Flow
 
 - player is initially given a sequence of numbers 1 - 9 
 
@@ -8,6 +18,8 @@
     (this ensures that the user can win.)
     
 - The player then has 4 moves to rearrange the pieces correctly.
+
+## ActiveRecord
 
 - using activerecord, player stats recorded: 
     * wins
