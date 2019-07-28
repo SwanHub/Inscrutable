@@ -1,4 +1,4 @@
-
+![Inscrutable_game_logo](https://user-images.githubusercontent.com/47403119/62011684-c3a27680-b138-11e9-81c8-aad10280b7af.png)
 
 ## Installation 
 
