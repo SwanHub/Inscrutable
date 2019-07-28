@@ -1,6 +1,6 @@
 ## Inscrutable
 
-**Inscrutable is the first of many games to come from the umbrella .co of "Flatiron Games", games made by students, instructors, alumni at Flatiron School. 
+*Inscrutable is the first of many games to come from the umbrella .co of "Flatiron Games", games made by students, instructors, alumni at Flatiron School. 
 
 - player is initially given a sequence of numbers 1 - 9 
 
