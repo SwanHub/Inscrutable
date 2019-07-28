@@ -14,8 +14,7 @@ Inscrutable is the first of many games which will exist under the "Flatiron Game
 
 - player is initially given a sequence of numbers 1 - 9 
 
-- cpu scrambles the board using a random selection of the four transformations available to the user.
-    (this ensures that the user can win.)
+- cpu scrambles the board using four randomized transformations.
     
 - The player then has 4 moves to rearrange the pieces correctly.
 
