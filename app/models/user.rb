@@ -101,22 +101,41 @@ class User < ActiveRecord::Base
 
   #### GENERAL LEADERBOARD STATS --------------------------------------------
   def self.general_leaderboard
-      puts ""
-      puts "                                      GENERAL LEADERBOARD "
-      puts ""
-      puts "                   Fastest Victory: #{fastest_victory}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Most games played: #{most_games_played[:total_games]} – #{most_games_played[:user]}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Best Win Percentage: #{best_win_percentage[:win_percentage]}% – #{best_win_percentage[:user]}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Most Wins: #{most_wins[:total_wins]} – #{most_wins[:user]}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Most Losses: #{most_losses[:total_losses]} – #{most_losses[:user]}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Total Wins: #{total_win_count}"
-      puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
-      puts "                   Total Losses: #{total_lose_count}"
+      if total_win_count == 0
+         puts ""
+         puts "                                      GENERAL LEADERBOARD "
+         puts ""
+         puts "                   Fastest Victory: None yet"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most games played: #{most_games_played[:total_games]} – #{most_games_played[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Best Win Percentage: No wins yet."
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most Wins: No wins yet."
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most Losses: #{most_losses[:total_losses]} – #{most_losses[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Total Wins: 0"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Total Losses: #{total_lose_count}"
+      else
+         puts ""
+         puts "                                      GENERAL LEADERBOARD "
+         puts ""
+         puts "                   Fastest Victory: #{fastest_victory}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most games played: #{most_games_played[:total_games]} – #{most_games_played[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Best Win Percentage: #{best_win_percentage[:win_percentage]}% – #{best_win_percentage[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most Wins: #{most_wins[:total_wins]} – #{most_wins[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Most Losses: #{most_losses[:total_losses]} – #{most_losses[:user]}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Total Wins: #{total_win_count}"
+         puts Paint['                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', :red, :faint]
+         puts "                   Total Losses: #{total_lose_count}"
+      end
   end
 
   def self.all_finished_games
@@ -245,7 +264,11 @@ class User < ActiveRecord::Base
   end
 
   def fastest_victory
-      wins.map{|win| win.finish_time - win.created_at}.min.round(2)
+      if total_wins == 0
+         "–"
+      else
+         wins.map{|win| win.finish_time - win.created_at}.min.round(2)
+      end
   end
 
   def losses
