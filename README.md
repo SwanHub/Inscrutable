@@ -6,7 +6,7 @@
 
 - `$ bundle install`
 
-- create database: `$ rake db:migrate`
+- create database, load tables: `$ rake db:migrate`
 
 - run game: `$ ruby config/environment.rb`
 
