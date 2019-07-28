@@ -17,13 +17,13 @@
 ## ActiveRecord
 
 - Using activerecord, player stats recorded: 
-    * wins
-    * losses
-    * win_percentage
-    * number of games played
-    * last time played 
-    * last time played result
-    * quickest victory
+    * Wins
+    * Losses
+    * Win_percentage
+    * Number of games played
+    * Last time played 
+    * Last time played result
+    * Quickest victory
 
 - Using activerecord, general leaderboards across users recorded:
     * Quickest victory
