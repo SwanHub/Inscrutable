@@ -1,5 +1,4 @@
 
-![Inscrutable_logo](https://user-images.githubusercontent.com/47403119/62002209-8ef0d980-b0bc-11e9-877c-b9ac85c20024.png)
 
 ## Installation 
 
