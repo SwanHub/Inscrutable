@@ -44,4 +44,4 @@
     * Total losses
 
 A more in depth explanation of the game available here:
-  - [insert Medium article]
+  - https://medium.com/@jdprince555/ruby-command-line-interface-game-797ea702f42b
