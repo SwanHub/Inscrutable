@@ -3,7 +3,7 @@
 
 ## Description
 
-Inscrutable is the first of many games which will exist under the "Flatiron Games" name. These are games made by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
+Inscrutable is the first of many games which will exist under the "Flatiron Games" moniker. These are games made by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
 
 ## Installation 
 
