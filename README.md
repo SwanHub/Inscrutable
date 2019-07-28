@@ -1,9 +1,9 @@
 
-
+![Inscrutable_logo](https://user-images.githubusercontent.com/47403119/62002209-8ef0d980-b0bc-11e9-877c-b9ac85c20024.png)
 
 ## Description
 
-The intention of Inscrutable is to usher in a host of games created by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
+Inscrutable is the first of many games which will exist under the "Flatiron Games" name. These are games made by students, instructors and alumni at Flatiron School. The hope is one day these games can make it to the app store and generate money for student scholarships. 
 
 ## Installation 
 
