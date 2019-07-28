@@ -26,7 +26,7 @@
     * quickest victory
 
 - Using activerecord, general leaderboards across users recorded:
-    * Fastest victory
+    * Quickest victory
     * Most games played 
     * Most wins 
     * Most losses
