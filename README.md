@@ -9,9 +9,10 @@
 - Create database, load tables: `$ rake db:migrate`
 
 - Run game:
-    1. open 'config/environment'
-    2. uncomment `play_game`
-    3. While in `Inscrutable/` directory, enter `$ ruby config/environment.rb`
+    1. Open 'config/environment'
+    2. Uncomment `play_game`
+    3. Open Terminal, increase text size ~ 10 times ('Cmd' + '+'), enter full screen.
+    4. While in `Inscrutable/` directory, enter `$ ruby config/environment.rb`
 
 ## Rules / Game Flow
 
