@@ -2,7 +2,7 @@
 
 ## Installation
 
-- Fork and clone this repository.
+- Clone this repository.
 
 - Install gem dependencies `$ bundle install`
 
